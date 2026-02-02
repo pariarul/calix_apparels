@@ -161,7 +161,7 @@ const Navbar = () => {
                                         <div className="relative h-8 w-8 overflow-hidden rounded-md">
                                             <Image src="/logo.jpeg" alt="Logo" fill className="object-cover" />
                                         </div>
-                                        <span className="font-black tracking-tighter text-lg text-charcoal">CALIX</span>
+                                        <span className="font-black tracking-tighter text-lg text-charcoal">CALIX APPARELS</span>
                                     </div>
                                     <button
                                         onClick={() => setIsOpen(false)}
