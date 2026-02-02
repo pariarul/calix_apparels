@@ -1,9 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Mail, MapPin, Linkedin, Instagram, Twitter, ArrowUp } from "lucide-react";
-
+import { useState, useEffect } from "react";
+import Image from "next/image";
 const Footer = () => {
+
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
@@ -14,9 +27,24 @@ const Footer = () => {
                 <div className="grid lg:grid-cols-4 gap-16 mb-24">
                     {/* Company Info */}
                     <div className="lg:col-span-1">
-                        <h3 className="text-2xl font-bold tracking-tighter text-charcoal mb-8">
-                            CALIX APPARELS
-                        </h3>
+                        {/* Brand / Logo (Center on mobile, Left on desktop) */}
+                        <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="flex items-center gap-3 lg:flex-none lg:justify-start justify-center flex-[2] lg:flex-1"
+                        >
+                            <div className="relative h-10 w-10 overflow-hidden rounded-lg shadow-inner">
+                                <a href="/"> <Image
+                                    src="/logo.jpeg"
+                                    alt="Calix Logo"
+                                    fill
+                                    className="object-cover"
+                                /></a>
+                            </div>
+                            <a href="/"> <span className={`text-xl md:text-2xl font-black tracking-tighter transition-colors duration-500 ${scrolled ? "text-charcoal" : "text-charcoal lg:text-white"}`}>
+                                CALIX APPARELS
+                            </span></a>
+                        </motion.div>
                         <p className="text-gray-500 font-light leading-relaxed mb-8">
                             A global leader in ethical garment manufacturing, blending
                             artisanal quality with industrial-scale efficiency since 2003.
@@ -112,9 +140,9 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400 gap-4">
                     <div>© 2026 Calix Apparels. Crafted for the World.</div>
                     <div className="flex gap-8">
-                        <a href="#security" className="hover:text-charcoal transition-colors">Security</a>
-                        <a href="#cookies" className="hover:text-charcoal transition-colors">Cookies</a>
-                        <a href="#sitemap" className="hover:text-charcoal transition-colors">Sitemap</a>
+                        <Link href="/security" className="hover:text-charcoal transition-colors">Security</Link>
+                        <Link href="/cookies" className="hover:text-charcoal transition-colors">Cookies</Link>
+                        <Link href="/sitemap" className="hover:text-charcoal transition-colors">Sitemap</Link>
                     </div>
                 </div>
             </div>

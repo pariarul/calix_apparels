@@ -36,9 +36,9 @@ const Navbar = () => {
     ];
 
     const legalLinks = [
-        { name: "Security", href: "#security" },
-        { name: "Cookies", href: "#cookies" },
-        { name: "Sitemap", href: "#sitemap" },
+        { name: "Security", href: "/security" },
+        { name: "Cookies", href: "/cookies" },
+        { name: "Sitemap", href: "/sitemap" },
     ];
 
     return (
@@ -84,16 +84,16 @@ const Navbar = () => {
                         className="flex items-center gap-3 lg:flex-none lg:justify-start justify-center flex-[2] lg:flex-1"
                     >
                         <div className="relative h-10 w-10 overflow-hidden rounded-lg shadow-inner">
-                            <Image
+                            <a href="/"> <Image
                                 src="/logo.jpeg"
                                 alt="Calix Logo"
                                 fill
                                 className="object-cover"
-                            />
+                            /></a>
                         </div>
-                        <span className={`text-xl md:text-2xl font-black tracking-tighter transition-colors duration-500 ${scrolled ? "text-charcoal" : "text-charcoal lg:text-white"}`}>
+                        <a href="/"> <span className={`text-xl md:text-2xl font-black tracking-tighter transition-colors duration-500 ${scrolled ? "text-charcoal" : "text-charcoal lg:text-white"}`}>
                             CALIX APPARELS
-                        </span>
+                        </span></a>
                     </motion.div>
 
                     {/* Desktop Menu (Right) */}
@@ -117,8 +117,8 @@ const Navbar = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 className={`px-6 py-3 text-xs font-bold tracking-widest uppercase transition-all shadow-lg flex items-center gap-2 ${scrolled
-                                        ? "bg-charcoal text-white hover:bg-black shadow-charcoal/10"
-                                        : "bg-white text-charcoal hover:bg-gray-100 shadow-white/10"
+                                    ? "bg-charcoal text-white hover:bg-black shadow-charcoal/10"
+                                    : "bg-white text-charcoal hover:bg-gray-100 shadow-white/10"
                                     }`}
                             >
                                 BULK QUOTE <ArrowRight size={14} />

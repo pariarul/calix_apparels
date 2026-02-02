@@ -23,7 +23,7 @@ const Products = () => {
         {
             title: "Children",
             desc: "Soft and safe Kids & Infant Wear following strict safety standards.",
-            image: "https://images.unsplash.com/photo-1519235106638-30cc49daef53?q=80&w=1784&auto=format&fit=crop",
+            image: "/images/kids_wear.png",
         },
         {
             title: "Womenswear",

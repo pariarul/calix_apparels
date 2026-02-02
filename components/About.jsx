@@ -50,7 +50,7 @@ const About = () => {
                         transition={{ duration: 0.8 }}
                         className="relative h-[500px] bg-gray-50 overflow-hidden group"
                     >
-                        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558444479-c8a51bc730ad?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700"></div>
+                        <div className="absolute inset-0 bg-[url('/images/legacy.png')] bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700"></div>
                         <div className="absolute inset-0 bg-charcoal/5"></div>
                     </motion.div>
                 </div>
