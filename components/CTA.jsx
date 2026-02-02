@@ -38,12 +38,29 @@ const CTA = () => {
                         transition={{ delay: 0.2 }}
                         className="flex flex-col sm:flex-row gap-6"
                     >
-                        <button className="bg-white text-charcoal px-10 py-5 font-bold tracking-widest uppercase hover:bg-gray-100 transition-all flex items-center justify-center gap-3">
-                            START ORDER PROCESS <ArrowRight size={20} />
-                        </button>
-                        <button className="border border-white/20 text-white px-10 py-5 font-bold tracking-widest uppercase hover:bg-white/10 transition-all">
+
+
+                        {/* WhatsApp */}
+                        <a
+                            href="https://wa.me/919087949574"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white text-charcoal px-10 py-5 font-bold tracking-widest uppercase hover:bg-gray-100 transition-all flex items-center justify-center gap-3"
+                        >
+                            START ORDER PROCESS
+                            <ArrowRight size={20} />
+                        </a>
+
+                        {/* Call */}
+                        <a
+                            href="tel:+919087949574"
+                            className="border border-white/20 text-white px-10 py-5 font-bold tracking-widest uppercase hover:bg-white/10 transition-all flex items-center justify-center gap-3"
+                        >
                             FULL CAPABILITIES
-                        </button>
+
+                        </a>
+
+
                     </motion.div>
                 </div>
             </div>

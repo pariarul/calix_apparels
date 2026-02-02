@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Mail, MapPin, Linkedin, Instagram, Twitter, ArrowUp } from "lucide-react";
+import { Mail, MapPin, Linkedin, Instagram, ArrowUp, Facebook } from "lucide-react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 const Footer = () => {
@@ -57,7 +57,7 @@ const Footer = () => {
                                 <Instagram size={18} />
                             </a>
                             <a href="#" className="p-3 bg-gray-50 text-gray-400 hover:text-charcoal hover:bg-gray-100 transition-all rounded-full">
-                                <Twitter size={18} />
+                                <Facebook size={18} />
                             </a>
                         </div>
                     </div>
