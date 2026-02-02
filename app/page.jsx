@@ -7,6 +7,9 @@ import Certifications from "@/components/Certifications";
 import Market from "@/components/Market";
 import Process from "@/components/Process";
 import CTA from "@/components/CTA";
+import Security from "@/components/Security";
+import Cookies from "@/components/Cookies";
+import Sitemap from "@/components/Sitemap";
 
 export default function Home() {
   return (
@@ -20,6 +23,9 @@ export default function Home() {
       <Market />
       <Process />
       <CTA />
+      <Security />
+      <Cookies />
+      <Sitemap />
     </main>
   );
 }

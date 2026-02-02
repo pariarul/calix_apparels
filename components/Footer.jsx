@@ -98,7 +98,7 @@ const Footer = () => {
                         </div>
                         <div>
                             <div className="text-xs font-bold text-gray-400 uppercase tracking-widest">Email</div>
-                            <div className="text-sm font-medium text-charcoal">contact@calixapparels.com</div>
+                            <div className="text-sm font-medium text-charcoal"> sales@calixapparels.com</div>
                         </div>
                     </div>
                     <button
@@ -112,9 +112,9 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400 gap-4">
                     <div>© 2026 Calix Apparels. Crafted for the World.</div>
                     <div className="flex gap-8">
-                        <a href="#">Security</a>
-                        <a href="#">Cookies</a>
-                        <a href="#">Sitemap</a>
+                        <a href="#security" className="hover:text-charcoal transition-colors">Security</a>
+                        <a href="#cookies" className="hover:text-charcoal transition-colors">Cookies</a>
+                        <a href="#sitemap" className="hover:text-charcoal transition-colors">Sitemap</a>
                     </div>
                 </div>
             </div>

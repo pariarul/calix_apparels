@@ -35,71 +35,101 @@ const Navbar = () => {
         { name: "Markets", href: "#markets" },
     ];
 
+    const legalLinks = [
+        { name: "Security", href: "#security" },
+        { name: "Cookies", href: "#cookies" },
+        { name: "Sitemap", href: "#sitemap" },
+    ];
+
     return (
-        <nav
-            className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? "glass-nav py-3" : "bg-transparent py-6"
-                }`}
-        >
-            <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center relative">
-
-                {/* Mobile: Menu Toggle (Left) */}
-                <div className="lg:hidden flex-1">
-                    <button
-                        onClick={() => setIsOpen(true)}
-                        className="text-charcoal p-2 -ml-2 hover:bg-gray-100 rounded-full transition-colors"
-                        aria-label="Open Menu"
-                    >
-                        <Menu size={28} />
-                    </button>
-                </div>
-
-                {/* Brand / Logo (Center on mobile, Left on desktop) */}
-                <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-3 lg:flex-none lg:justify-start justify-center flex-[2] lg:flex-1"
-                >
-                    <div className="relative h-10 w-10 overflow-hidden rounded-lg">
-                        <Image
-                            src="/logo.jpeg"
-                            alt="Calix Logo"
-                            fill
-                            className="object-cover"
-                        />
+        <nav className="fixed w-full z-50">
+            {/* Top Bar - Only on Desktop */}
+            <div className={`hidden lg:block transition-all duration-500 overflow-hidden ${scrolled ? 'h-0 opacity-0' : 'h-10 opacity-100 bg-charcoal text-white/60 border-b border-white/5'}`}>
+                <div className="max-w-7xl mx-auto px-12 h-full flex justify-between items-center text-[10px] font-bold tracking-[0.2em] uppercase">
+                    <div className="flex gap-8">
+                        {legalLinks.map((link) => (
+                            <a key={link.name} href={link.href} className="hover:text-white transition-colors">
+                                {link.name}
+                            </a>
+                        ))}
                     </div>
-                    <span className="text-xl md:text-2xl font-black tracking-tighter text-charcoal whitespace-nowrap">
-                        CALIX APPARELS
-                    </span>
-                </motion.div>
-
-                {/* Desktop Menu (Right) */}
-                <div className="hidden lg:flex items-center justify-end flex-1 space-x-8">
-                    {navLinks.map((link, index) => (
-                        <motion.a
-                            key={link.name}
-                            href={link.href}
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            className="text-xs font-bold text-gray-500 hover:text-charcoal transition-colors uppercase tracking-[0.2em]"
-                        >
-                            {link.name}
-                        </motion.a>
-                    ))}
-                    <motion.button
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-charcoal text-white px-6 py-3 text-xs font-bold tracking-widest uppercase rounded-none flex items-center gap-2 hover:bg-black transition-all shadow-lg shadow-charcoal/10"
-                    >
-                        BULK QUOTE <ArrowRight size={14} />
-                    </motion.button>
+                    <div className="flex gap-8">
+                        <span className="flex items-center gap-2"><MapPin size={10} /> Tiruppur, India</span>
+                        <span className="flex items-center gap-2"><Mail size={10} /> sales@calixapparels.com</span>
+                    </div>
                 </div>
+            </div>
 
-                {/* Mobile: Placeholder for right side balance */}
-                <div className="lg:hidden flex-1 flex justify-end">
-                    {/* Empty div to balance the centered logo */}
+            <div
+                className={`transition-all duration-500 ${scrolled ? "glass-nav py-3" : "bg-white/10 backdrop-blur-sm lg:bg-transparent py-6"
+                    }`}
+            >
+                <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center relative">
+
+                    {/* Mobile: Menu Toggle (Left) */}
+                    <div className="lg:hidden flex-1">
+                        <button
+                            onClick={() => setIsOpen(true)}
+                            className="text-charcoal p-2 -ml-2 hover:bg-gray-100 rounded-full transition-colors"
+                            aria-label="Open Menu"
+                        >
+                            <Menu size={28} />
+                        </button>
+                    </div>
+
+                    {/* Brand / Logo (Center on mobile, Left on desktop) */}
+                    <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="flex items-center gap-3 lg:flex-none lg:justify-start justify-center flex-[2] lg:flex-1"
+                    >
+                        <div className="relative h-10 w-10 overflow-hidden rounded-lg shadow-inner">
+                            <Image
+                                src="/logo.jpeg"
+                                alt="Calix Logo"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                        <span className={`text-xl md:text-2xl font-black tracking-tighter transition-colors duration-500 ${scrolled ? "text-charcoal" : "text-charcoal lg:text-white"}`}>
+                            CALIX APPARELS
+                        </span>
+                    </motion.div>
+
+                    {/* Desktop Menu (Right) */}
+                    <div className="hidden lg:flex items-center justify-end flex-1 space-x-8">
+                        {navLinks.map((link, index) => (
+                            <motion.a
+                                key={link.name}
+                                href={link.href}
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                                className={`text-xs font-bold transition-colors uppercase tracking-[0.2em] ${scrolled ? "text-gray-500 hover:text-charcoal" : "text-white/70 hover:text-white"}`}
+                            >
+                                {link.name}
+                            </motion.a>
+                        ))}
+                        <a href="tel:+919087949574">
+                            <motion.button
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className={`px-6 py-3 text-xs font-bold tracking-widest uppercase transition-all shadow-lg flex items-center gap-2 ${scrolled
+                                        ? "bg-charcoal text-white hover:bg-black shadow-charcoal/10"
+                                        : "bg-white text-charcoal hover:bg-gray-100 shadow-white/10"
+                                    }`}
+                            >
+                                BULK QUOTE <ArrowRight size={14} />
+                            </motion.button>
+                        </a>
+                    </div>
+
+                    {/* Mobile: Placeholder for right side balance */}
+                    <div className="lg:hidden flex-1 flex justify-end">
+                        {/* Empty div to balance the centered logo */}
+                    </div>
                 </div>
             </div>
 
@@ -167,7 +197,7 @@ const Navbar = () => {
                                             </div>
                                             <div>
                                                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Office Location</p>
-                                                <p className="text-sm font-medium text-charcoal">Tiruppur, Tamil Nadu, India</p>
+                                                <p className="text-sm font-medium text-charcoal">Tiruppur, India</p>
                                             </div>
                                         </div>
 
@@ -180,6 +210,13 @@ const Navbar = () => {
                                                 <p className="text-sm font-medium text-charcoal">contact@calixapparels.com</p>
                                             </div>
                                         </div>
+                                    </div>
+
+                                    {/* Small Legal Links for Mobile */}
+                                    <div className="mt-8 pt-8 border-t border-gray-50 flex gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                                        <a href="#security" onClick={() => setIsOpen(false)}>Security</a>
+                                        <a href="#cookies" onClick={() => setIsOpen(false)}>Cookies</a>
+                                        <a href="#sitemap" onClick={() => setIsOpen(false)}>Sitemap</a>
                                     </div>
 
                                     <button className="w-full mt-10 bg-charcoal text-white py-4 font-bold tracking-widest uppercase text-xs flex items-center justify-center gap-2 hover:bg-black transition-all">
