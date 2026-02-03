@@ -49,13 +49,13 @@ const Hero = () => {
                     className="flex flex-col sm:flex-row items-center justify-center gap-6"
                 >
                     <a
-                        href="https://wa.me/919087949574"
+                        href="https://wa.me/919385363878"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full sm:w-auto px-10 py-5 bg-charcoal text-white font-bold tracking-widest hover:bg-gray-800 transition-all flex items-center justify-center gap-3">
                         OUR CAPABILITIES
                     </a>
-                    <a href="tel:+919087949574" className="w-full sm:w-auto px-10 py-5 border border-gray-200 text-charcoal font-bold tracking-widest hover:bg-gray-50 transition-all flex items-center justify-center gap-3">
+                    <a href="tel:+9193853 63878" className="w-full sm:w-auto px-10 py-5 border border-gray-200 text-charcoal font-bold tracking-widest hover:bg-gray-50 transition-all flex items-center justify-center gap-3">
                         BULK QUOTE <ArrowRight size={20} />
                     </a>
                 </motion.div>

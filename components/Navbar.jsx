@@ -122,7 +122,7 @@ const Navbar = () => {
                                 {link.name}
                             </motion.a>
                         ))}
-                        <a href="tel:+919087949574">
+                        <a href="tel:+9193853 63878">
                             <motion.button
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
@@ -233,7 +233,7 @@ const Navbar = () => {
                                         <Link href="/sitemap" onClick={() => setIsOpen(false)}>Sitemap</Link>
                                     </div>
 
-                                    <a href="tel:+919087949574"
+                                    <a href="tel:+9193853 63878"
                                      className="w-full mt-10 bg-charcoal text-white py-4 font-bold tracking-widest uppercase text-xs flex items-center justify-center gap-2 hover:bg-black transition-all">
                                         GET A BULK QUOTE <ArrowRight size={14} />
                                     </a>

@@ -42,7 +42,7 @@ const CTA = () => {
 
                         {/* WhatsApp */}
                         <a
-                            href="https://wa.me/919087949574"
+                            href="https://wa.me/9193853 63878"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-white text-charcoal px-10 py-5 font-bold tracking-widest uppercase hover:bg-gray-100 transition-all flex items-center justify-center gap-3"
@@ -69,3 +69,4 @@ const CTA = () => {
 };
 
 export default CTA;
+
