@@ -50,13 +50,13 @@ const Footer = () => {
                             artisanal quality with industrial-scale efficiency since 2003.
                         </p>
                         <div className="flex gap-4">
-                            <a href="#" className="p-3 bg-gray-50 text-gray-400 hover:text-charcoal hover:bg-gray-100 transition-all rounded-full">
+                            <a href="https://www.linkedin.com/in/calix-apparels-27631b309/" className="p-3 bg-gray-50 text-gray-400 hover:text-charcoal hover:bg-gray-100 transition-all rounded-full">
                                 <Linkedin size={18} />
                             </a>
-                            <a href="#" className="p-3 bg-gray-50 text-gray-400 hover:text-charcoal hover:bg-gray-100 transition-all rounded-full">
+                            <a href="https://www.instagram.com/calixapparels/" className="p-3 bg-gray-50 text-gray-400 hover:text-charcoal hover:bg-gray-100 transition-all rounded-full">
                                 <Instagram size={18} />
                             </a>
-                            <a href="#" className="p-3 bg-gray-50 text-gray-400 hover:text-charcoal hover:bg-gray-100 transition-all rounded-full">
+                            <a href="https://www.facebook.com/profile.php?id=61551783518798" className="p-3 bg-gray-50 text-gray-400 hover:text-charcoal hover:bg-gray-100 transition-all rounded-full">
                                 <Facebook size={18} />
                             </a>
                         </div>
