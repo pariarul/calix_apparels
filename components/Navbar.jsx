@@ -1,8 +1,20 @@
 "use client";
-
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight, MapPin, Mail, Phone } from "lucide-react";
+import {
+  Menu,
+  X,
+  ArrowRight,
+  MapPin,
+  Mail,
+  Info,
+  Package,
+  Factory,
+  BadgeCheck,
+  Globe,
+  Award
+} from "lucide-react";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -27,12 +39,12 @@ const Navbar = () => {
     }, [isOpen]);
 
     const navLinks = [
-        { name: "About", href: "#about" },
-        { name: "Products", href: "#products" },
-        { name: "Infrastructure", href: "#infrastructure" },
-        { name: "Quality", href: "#quality" },
-        { name: "Certifications", href: "#certifications" },
-        { name: "Markets", href: "#markets" },
+        { name: "About", href: "#about" ,icon:Info},
+        { name: "Products", href: "#products" ,icon:Package},
+        { name: "Infrastructure", href: "#infrastructure" ,icon:Factory},
+        { name: "Quality", href: "#quality" ,icon:BadgeCheck},
+        { name: "Certifications", href: "#certifications", icon: Award },
+        { name: "Markets", href: "#markets",icon:Globe },
     ];
 
     const legalLinks = [
@@ -152,16 +164,16 @@ const Navbar = () => {
                             animate={{ x: 0 }}
                             exit={{ x: "-100%" }}
                             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                            className="fixed left-0 top-0 bottom-0 w-[85%] max-w-sm bg-white z-[70] lg:hidden flex flex-col shadow-2xl"
+                            className="fixed left-0 top-0 bottom-0 w-[75%] max-w-sm bg-white z-[70] lg:hidden flex flex-col shadow-2xl"
                         >
                             <div className="p-8 flex flex-col h-full">
                                 {/* Sidebar Header */}
                                 <div className="flex justify-between items-center mb-12">
                                     <div className="flex items-center gap-3">
-                                        <div className="relative h-8 w-8 overflow-hidden rounded-md">
+                                        <a href="/" className="relative h-8 w-8 overflow-hidden rounded-md">
                                             <Image src="/logo.jpeg" alt="Logo" fill className="object-cover" />
-                                        </div>
-                                        <span className="font-black tracking-tighter text-lg text-charcoal">CALIX APPARELS</span>
+                                        </a>
+                                      <a href="/">  <span className="font-black tracking-tighter text-lg text-charcoal">CALIX APPARELS</span> </a>
                                     </div>
                                     <button
                                         onClick={() => setIsOpen(false)}
@@ -172,20 +184,22 @@ const Navbar = () => {
                                 </div>
 
                                 {/* Navigation Links */}
-                                <div className="flex flex-col space-y-6">
-                                    {navLinks.map((link, index) => (
-                                        <motion.a
-                                            key={link.name}
-                                            href={link.href}
-                                            initial={{ opacity: 0, x: -20 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            transition={{ delay: 0.1 + index * 0.05 }}
-                                            onClick={() => setIsOpen(false)}
-                                            className="text-2xl font-bold text-charcoal hover:text-gray-400 transition-colors"
-                                        >
-                                            {link.name}
-                                        </motion.a>
-                                    ))}
+                                <div className="flex flex-col space-y-10 ">
+{navLinks.map(({ name, href, icon: Icon }, index) => (
+  <motion.a
+    key={name}
+    href={href}
+    initial={{ opacity: 0, x: -20 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ delay: 0.1 + index * 0.05 }}
+    onClick={() => setIsOpen(false)}
+    className="flex items-center gap-4 text-2xl font-bold text-charcoal hover:text-gray-400"
+  >
+    {Icon && <Icon size={22} />}
+    {name}
+  </motion.a>
+))}
+
                                 </div>
 
                                 <div className="mt-auto pt-10 border-t border-gray-100">
@@ -207,21 +221,22 @@ const Navbar = () => {
                                             </div>
                                             <div>
                                                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Email Inquiry</p>
-                                                <p className="text-sm font-medium text-charcoal">contact@calixapparels.com</p>
+                                                <p className="text-sm font-medium text-charcoal">sales@calixapparels.com</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     {/* Small Legal Links for Mobile */}
                                     <div className="mt-8 pt-8 border-t border-gray-50 flex gap-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                                        <a href="#security" onClick={() => setIsOpen(false)}>Security</a>
-                                        <a href="#cookies" onClick={() => setIsOpen(false)}>Cookies</a>
-                                        <a href="#sitemap" onClick={() => setIsOpen(false)}>Sitemap</a>
+                                        <Link href="/security" onClick={() => setIsOpen(false)}>Security</Link>
+                                        <Link href="/cookies" onClick={() => setIsOpen(false)}>Cookies</Link>
+                                        <Link href="/sitemap" onClick={() => setIsOpen(false)}>Sitemap</Link>
                                     </div>
 
-                                    <button className="w-full mt-10 bg-charcoal text-white py-4 font-bold tracking-widest uppercase text-xs flex items-center justify-center gap-2 hover:bg-black transition-all">
+                                    <a href="tel:+919087949574"
+                                     className="w-full mt-10 bg-charcoal text-white py-4 font-bold tracking-widest uppercase text-xs flex items-center justify-center gap-2 hover:bg-black transition-all">
                                         GET A BULK QUOTE <ArrowRight size={14} />
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </motion.div>
